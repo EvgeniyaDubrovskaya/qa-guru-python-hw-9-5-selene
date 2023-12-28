@@ -18,8 +18,10 @@ def test_sign_up_all_fields_success():
     browser.element('.react-datepicker__month-select').element('[value="0"]').click()
     browser.element('.react-datepicker__day--001').click()
 
+    # Fill in subject maths
     browser.element('#subjectsInput').click().type('a').press_enter()
-    #browser.element('#subjectsInput').click().type('a')
+
+    # Fill in hobby
     browser.element('[for="hobbies-checkbox-2"]').click()
 
     # Add picture
