@@ -1,6 +1,8 @@
 import os
-
+from os.path import dirname, abspath
 from selene import browser, have, command
+
+PATH_RES = os.path.join(dirname(dirname(abspath(__file__))), "resources")
 
 
 def test_sign_up_all_fields_success():
@@ -26,7 +28,7 @@ def test_sign_up_all_fields_success():
 
     # Add picture
     browser.element('.form-file-label').perform(command.js.scroll_into_view)
-    browser.element('#uploadPicture').send_keys(os.getcwd() + "/resources/windy_hill.jpg")
+    browser.element('#uploadPicture').send_keys(PATH_RES + "/windy_hill.jpg")
 
     # Fill in current address with multiple lines
     browser.element('#currentAddress').type('45 Current Address')
