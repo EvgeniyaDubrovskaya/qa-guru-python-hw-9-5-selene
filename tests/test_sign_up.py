@@ -18,7 +18,8 @@ def test_sign_up_all_fields_success():
     browser.element('.react-datepicker__month-select').element('[value="0"]').click()
     browser.element('.react-datepicker__day--001').click()
 
-    browser.element('#subjectsInput').click().type('Subjects Container')
+    browser.element('#subjectsInput').click().type('a').press_enter()
+    #browser.element('#subjectsInput').click().type('a')
     browser.element('[for="hobbies-checkbox-2"]').click()
 
     # Add picture
@@ -46,7 +47,7 @@ def test_sign_up_all_fields_success():
     browser.element('.table-responsive').all('td:nth-child(2)')[2].should(have.text('Female'))
     browser.element('.table-responsive').all('td:nth-child(2)')[3].should(have.text('1234567890'))
     browser.element('.table-responsive').all('td:nth-child(2)')[4].should(have.text('1 January,1990'))
-    browser.element('.table-responsive').all('td:nth-child(2)')[5].should(have.text(''))
+    browser.element('.table-responsive').all('td:nth-child(2)')[5].should(have.text('Maths'))
     browser.element('.table-responsive').all('td:nth-child(2)')[6].should(have.text('Reading'))
     browser.element('.table-responsive').all('td:nth-child(2)')[7].should(have.text('windy_hill.jpg'))
     browser.element('.table-responsive').all('td:nth-child(2)')[8].should(have.text('45 Current Address'))
